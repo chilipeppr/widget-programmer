@@ -14,10 +14,10 @@ not conflict with other ChiliPeppr widgets.
 | ID                    | com-chilipeppr-widget-programmer |
 | Name                  | Widget / Programmer |
 | Description           | This widget lets you program your Arduino/Atmel from within ChiliPeppr using SPJS's new programfromurl method. |
-| chilipeppr.load() URL | http://raw.githubusercontent.com/raykholo/widget-programmer/master/auto-generated-widget.html |
-| Edit URL              | http://ide.c9.io/raykholo/widget-programmer |
-| Github URL            | http://github.com/raykholo/widget-programmer |
-| Test URL              | https://preview.c9users.io/raykholo/widget-programmer/widget.html |
+| chilipeppr.load() URL | http://raw.githubusercontent.com/chilipeppr/widget-programmer/master/auto-generated-widget.html |
+| Edit URL              | http://ide.c9.io/chilipeppr/widget-programmer |
+| Github URL            | http://github.com/chilipeppr/widget-programmer |
+| Test URL              | https://preview.c9users.io/chilipeppr/widget-programmer/widget.html |
 
 ## Example Code for chilipeppr.load() Statement
 
@@ -30,7 +30,7 @@ back the instance of it.
 ```javascript
 chilipeppr.load(
   "#myDivWidgetInsertedInto",
-  "http://raw.githubusercontent.com/raykholo/widget-programmer/master/auto-generated-widget.html",
+  "http://raw.githubusercontent.com/chilipeppr/widget-programmer/master/auto-generated-widget.html",
   function() {
     // Callback after widget loaded into #myDivWidgetInsertedInto
     cprequire(
