@@ -7,7 +7,7 @@ cprequire_test(["inline:com-chilipeppr-widget-programmer"], function (programmer
     var testSpjsDiv = $("<div></div>").attr("id", "com-chilipeppr-serialport-spselector-test");
     $('body').append(testSpjsDiv);
     chilipeppr.load("#com-chilipeppr-serialport-spselector-test",
-        "http://fiddle.jshell.net/chilipeppr/vetj5fvx/show/light/",
+        "https://raw.githubusercontent.com/chilipeppr/widget-spjs/master/auto-generated-widget.html",
 
     function () {
         cprequire(
@@ -36,8 +36,10 @@ cprequire_test(["inline:com-chilipeppr-widget-programmer"], function (programmer
 cpdefine("inline:com-chilipeppr-widget-programmer", ["chilipeppr_ready"], function () {
     return {
         id: "com-chilipeppr-widget-programmer",
-        url: "http://jsfiddle.net/chilipeppr/qcduvhkh/show/light/",
-        fiddleurl: "http://jsfiddle.net/chilipeppr/qcduvhkh/",
+        url: "(auto fill by runme.js)",       // The final URL of the working widget as a single HTML file with CSS and Javascript inlined. You can let runme.js auto fill this if you are using Cloud9.
+        fiddleurl: "(auto fill by runme.js)", // The edit URL. This can be auto-filled by runme.js in Cloud9 if you'd like, or just define it on your own to help people know where they can edit/fork your widget
+        githuburl: "(auto fill by runme.js)", // The backing github repo
+        testurl: "(auto fill by runme.js)",   // The standalone working widget so can view it working by itself
         name: "Widget / Programmer",
         desc: "This widget lets you program your Arduino/Atmel from within ChiliPeppr using SPJS's new programfromurl method.",
         publish: {},
@@ -518,7 +520,7 @@ cpdefine("inline:com-chilipeppr-widget-programmer", ["chilipeppr_ready"], functi
             });
 
             var that = this;
-            chilipeppr.load("http://fiddle.jshell.net/chilipeppr/zMbL9/show/light/", function () {
+            chilipeppr.load("https://raw.githubusercontent.com/chilipeppr/widget-pubsubviewer/master/auto-generated-widget.html", function () {
                 require(['inline:com-chilipeppr-elem-pubsubviewer'], function (pubsubviewer) {
                     pubsubviewer.attachTo($(topCssSelector + ' .modal-header .dropdown-menu'), that);
                 });
