@@ -1,7 +1,7 @@
 # com-chilipeppr-widget-programmer
 This widget lets you program your Arduino/Atmel from within ChiliPeppr using SPJS's new programfromurl method.
 
-
+![alt text](screenshot.png "Screenshot")
 
 ## ChiliPeppr Widget / Programmer
 
