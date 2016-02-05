@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Widget-programmer by chilipeppr</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Widget-programmer</h1>
+      <h2 class="project-tagline">A widget that enables you to program your Arduino, AVR, or Bossac-based board from Serial Port JSON Server.</h2>
+      <a href="https://github.com/chilipeppr/widget-programmer" class="btn">View on GitHub</a>
+      <a href="https://github.com/chilipeppr/widget-programmer/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/chilipeppr/widget-programmer/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="com-chilipeppr-widget-programmer" class="anchor" href="#com-chilipeppr-widget-programmer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>com-chilipeppr-widget-programmer</h1>
+
+<p>This widget lets you program your Arduino/Atmel from within ChiliPeppr using SPJS's new programfromurl method. SPJS now comes with avrdude and bossac just like the Arduino IDE. This means SPJS can handle programming your firmware directly from the browser.</p>
+
+<p><img src="screenshot.png" alt="alt text" title="Screenshot"></p>
+
+<h2>
+<a id="chilipeppr-widget--programmer" class="anchor" href="#chilipeppr-widget--programmer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ChiliPeppr Widget / Programmer</h2>
+
+<p>All ChiliPeppr widgets/elements are defined using cpdefine() which is a method
+that mimics require.js. Each defined object must have a unique ID so it does
+not conflict with other ChiliPeppr widgets.</p>
+
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>com-chilipeppr-widget-programmer</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>Widget / Programmer</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>This widget lets you program your Arduino/Atmel from within ChiliPeppr using SPJS's new programfromurl method. SPJS now comes with avrdude and bossac just like the Arduino IDE. This means SPJS can handle programming your firmware directly from the browser.</td>
+</tr>
+<tr>
+<td>chilipeppr.load() URL</td>
+<td><a href="http://raw.githubusercontent.com/chilipeppr/widget-programmer/master/auto-generated-widget.html">http://raw.githubusercontent.com/chilipeppr/widget-programmer/master/auto-generated-widget.html</a></td>
+</tr>
+<tr>
+<td>Edit URL</td>
+<td><a href="http://ide.c9.io/chilipeppr/widget-programmer">http://ide.c9.io/chilipeppr/widget-programmer</a></td>
+</tr>
+<tr>
+<td>Github URL</td>
+<td><a href="http://github.com/chilipeppr/widget-programmer">http://github.com/chilipeppr/widget-programmer</a></td>
+</tr>
+<tr>
+<td>Test URL</td>
+<td><a href="https://preview.c9users.io/chilipeppr/widget-programmer/widget.html">https://preview.c9users.io/chilipeppr/widget-programmer/widget.html</a></td>
+</tr>
+</tbody>
+</table>
+
+<h2>
+<a id="example-code-for-chilipepprload-statement" class="anchor" href="#example-code-for-chilipepprload-statement" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example Code for chilipeppr.load() Statement</h2>
+
+<p>You can use the code below as a starting point for instantiating this widget 
+inside a workspace or from another widget. The key is that you need to load 
+your widget inlined into a div so the DOM can parse your HTML, CSS, and 
+Javascript. Then you use cprequire() to find your widget's Javascript and get 
+back the instance of it.</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c">// Inject new div to contain widget or use an existing div with an ID</span>
+<span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>body<span class="pl-pds">"</span></span>).<span class="pl-en">append</span>(<span class="pl-s"><span class="pl-pds">'</span>&lt;<span class="pl-pds">'</span></span> <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span>div id="myDivWidgetProgrammer"&gt;&lt;<span class="pl-pds">'</span></span> <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span>/div&gt;<span class="pl-pds">'</span></span>);
+
+<span class="pl-smi">chilipeppr</span>.<span class="pl-c1">load</span>(
+  <span class="pl-s"><span class="pl-pds">"</span>#myDivWidgetProgrammer<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>http://raw.githubusercontent.com/chilipeppr/widget-programmer/master/auto-generated-widget.html<span class="pl-pds">"</span></span>,
+  <span class="pl-k">function</span>() {
+    <span class="pl-c">// Callback after widget loaded into #myDivWidgetProgrammer</span>
+    <span class="pl-c">// Now use require.js to get reference to instantiated widget</span>
+    <span class="pl-en">cprequire</span>(
+      [<span class="pl-s"><span class="pl-pds">"</span>inline:com-chilipeppr-widget-programmer<span class="pl-pds">"</span></span>], <span class="pl-c">// the id you gave your widget</span>
+      <span class="pl-k">function</span>(<span class="pl-smi">myObjWidgetProgrammer</span>) {
+        <span class="pl-c">// Callback that is passed reference to the newly loaded widget</span>
+        <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">"</span>Widget / Programmer just got loaded.<span class="pl-pds">"</span></span>, myObjWidgetProgrammer);
+        <span class="pl-smi">myObjWidgetProgrammer</span>.<span class="pl-en">init</span>();
+      }
+    );
+  }
+);
+</pre></div>
+
+<h2>
+<a id="publish" class="anchor" href="#publish" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Publish</h2>
+
+<p>This widget/element publishes the following signals. These signals are owned by this widget/element and are published to all objects inside the ChiliPeppr environment that listen to them via the 
+chilipeppr.subscribe(signal, callback) method. 
+To better understand how ChiliPeppr's subscribe() method works see amplify.js's documentation at <a href="http://amplifyjs.com/api/pubsub/">http://amplifyjs.com/api/pubsub/</a></p>
+
+<p></p><table id="com-chilipeppr-elem-pubsubviewer-pub">
+      <thead>
+          <tr>
+              <th>Signal</th>
+              <th>Description</th>
+          </tr>
+      </thead>
+      <tbody>
+      <tr><td colspan="2">(No signals defined in this widget/element)</td></tr>
+<br>
+      </tbody>
+  </table>
+
+<h2>
+<a id="subscribe" class="anchor" href="#subscribe" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Subscribe</h2>
+
+<p>This widget/element subscribes to the following signals. These signals are owned by this widget/element. Other objects inside the ChiliPeppr environment can publish to these signals via the chilipeppr.publish(signal, data) method. 
+To better understand how ChiliPeppr's publish() method works see amplify.js's documentation at <a href="http://amplifyjs.com/api/pubsub/">http://amplifyjs.com/api/pubsub/</a></p>
+
+<p></p><table id="com-chilipeppr-elem-pubsubviewer-sub">
+      <thead>
+          <tr>
+              <th>Signal</th>
+              <th>Description</th>
+          </tr>
+      </thead>
+      <tbody>
+      <tr><td colspan="2">(No signals defined in this widget/element)</td></tr>
+<br>
+      </tbody>
+  </table>
+
+<h2>
+<a id="foreign-publish" class="anchor" href="#foreign-publish" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Foreign Publish</h2>
+
+<p>This widget/element publishes to the following signals that are owned by other objects. 
+To better understand how ChiliPeppr's subscribe() method works see amplify.js's documentation at <a href="http://amplifyjs.com/api/pubsub/">http://amplifyjs.com/api/pubsub/</a></p>
+
+<p></p><table id="com-chilipeppr-elem-pubsubviewer-foreignpub">
+      <thead>
+          <tr>
+              <th>Signal</th>
+              <th>Description</th>
+          </tr>
+      </thead>
+      <tbody>
+      <tr valign="top">
+<td>/com-chilipeppr-widget-programmer/com-chilipeppr-widget-serialport/send</td>
+<td>We send to the serial port certain commands like the initial configuration commands for the TinyG to be in the correct mode and to get initial statuses like planner buffers and XYZ coords. We also send the Emergency Stop and Resume of ! and ~</td>
+</tr>
+<tr valign="top">
+<td>/com-chilipeppr-widget-programmer/com-chilipeppr-elem-flashmsg/flashmsg</td>
+<td>To flash messages</td>
+</tr>
+<br>
+      </tbody>
+  </table>
+
+<h2>
+<a id="foreign-subscribe" class="anchor" href="#foreign-subscribe" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Foreign Subscribe</h2>
+
+<p>This widget/element publishes to the following signals that are owned by other objects.
+To better understand how ChiliPeppr's publish() method works see amplify.js's documentation at <a href="http://amplifyjs.com/api/pubsub/">http://amplifyjs.com/api/pubsub/</a></p>
+
+<p></p><table id="com-chilipeppr-elem-pubsubviewer-foreignsub">
+      <thead>
+          <tr>
+              <th>Signal</th>
+              <th>Description</th>
+          </tr>
+      </thead>
+      <tbody>
+      <tr valign="top">
+<td>/com-chilipeppr-widget-programmer/com-chilipeppr-widget-serialport/recvline</td>
+<td>When we get a dataline from serialport, process it and fire off generic CNC controller signals to the /com-chilipeppr-interface-cnccontroller channel.</td>
+</tr>
+<br>
+      </tbody>
+  </table>
+
+<h2>
+<a id="methods--properties" class="anchor" href="#methods--properties" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Methods / Properties</h2>
+
+<p>The table below shows, in order, the methods and properties inside the widget/element.</p>
+
+<p></p><table id="com-chilipeppr-elem-methodsprops">
+      <thead>
+          <tr>
+              <th>Method / Property</th>
+              <th>Type</th>
+              <th>Description</th>
+          </tr>
+      </thead>
+      <tbody>
+      <tr valign="top">
+<td>id</td>
+<td>string</td>
+<td>"com-chilipeppr-widget-programmer"</td>
+</tr>
+<tr valign="top">
+<td>url</td>
+<td>string</td>
+<td>"<a href="http://raw.githubusercontent.com/chilipeppr/widget-programmer/master/auto-generated-widget.html">http://raw.githubusercontent.com/chilipeppr/widget-programmer/master/auto-generated-widget.html</a>"</td>
+</tr>
+<tr valign="top">
+<td>fiddleurl</td>
+<td>string</td>
+<td>"<a href="http://ide.c9.io/chilipeppr/widget-programmer">http://ide.c9.io/chilipeppr/widget-programmer</a>"</td>
+</tr>
+<tr valign="top">
+<td>githuburl</td>
+<td>string</td>
+<td>"<a href="http://github.com/chilipeppr/widget-programmer">http://github.com/chilipeppr/widget-programmer</a>"</td>
+</tr>
+<tr valign="top">
+<td>testurl</td>
+<td>string</td>
+<td>"<a href="http://widget-programmer-chilipeppr.c9users.io/widget.html">http://widget-programmer-chilipeppr.c9users.io/widget.html</a>"</td>
+</tr>
+<tr valign="top">
+<td>name</td>
+<td>string</td>
+<td>"Widget / Programmer"</td>
+</tr>
+<tr valign="top">
+<td>desc</td>
+<td>string</td>
+<td>"This widget lets you program your Arduino/Atmel from within ChiliPeppr using SPJS's new programfromurl method. SPJS now comes with avrdude and bossac just like the Arduino IDE. This means SPJS can handle programming your firmware directly from the browser."</td>
+</tr>
+<tr valign="top">
+<td>publish</td>
+<td>object</td>
+<td>Please see docs above.</td>
+</tr>
+<tr valign="top">
+<td>subscribe</td>
+<td>object</td>
+<td>Please see docs above.</td>
+</tr>
+<tr valign="top">
+<td>foreignPublish</td>
+<td>object</td>
+<td>Please see docs above.</td>
+</tr>
+<tr valign="top">
+<td>foreignSubscribe</td>
+<td>object</td>
+<td>Please see docs above.</td>
+</tr>
+<tr valign="top">
+<td>isInitted</td>
+<td>boolean</td>
+<td></td>
+</tr>
+<tr valign="top">
+<td>init</td>
+<td>function</td>
+<td>function () </td>
+</tr>
+<tr valign="top">
+<td>setupProgramBtn</td>
+<td>function</td>
+<td>function () </td>
+</tr>
+<tr valign="top">
+<td>onProgram</td>
+<td>function</td>
+<td>function () </td>
+</tr>
+<tr valign="top">
+<td>downloadDone</td>
+<td>boolean</td>
+<td></td>
+</tr>
+<tr valign="top">
+<td>progressDone</td>
+<td>boolean</td>
+<td></td>
+</tr>
+<tr valign="top">
+<td>onWsRecv</td>
+<td>function</td>
+<td>function (msg) </td>
+</tr>
+<tr valign="top">
+<td>onProgramDone</td>
+<td>function</td>
+<td>function () </td>
+</tr>
+<tr valign="top">
+<td>portSelected</td>
+<td>object</td>
+<td></td>
+</tr>
+<tr valign="top">
+<td>isSetupPortListInitted</td>
+<td>boolean</td>
+<td></td>
+</tr>
+<tr valign="top">
+<td>setupPortList</td>
+<td>function</td>
+<td>function () </td>
+</tr>
+<tr valign="top">
+<td>getPortListCallback</td>
+<td>function</td>
+<td>function (data) </td>
+</tr>
+<tr valign="top">
+<td>onPortListClick</td>
+<td>function</td>
+<td>function (evt) </td>
+</tr>
+<tr valign="top">
+<td>deviceSelected</td>
+<td>object</td>
+<td></td>
+</tr>
+<tr valign="top">
+<td>setupDeviceList</td>
+<td>function</td>
+<td>function () </td>
+</tr>
+<tr valign="top">
+<td>onClickDeviceType</td>
+<td>function</td>
+<td>function (evt) </td>
+</tr>
+<tr valign="top">
+<td>onDeviceType</td>
+<td>function</td>
+<td>function (devicekey) </td>
+</tr>
+<tr valign="top">
+<td>setupUrl</td>
+<td>function</td>
+<td>function () </td>
+</tr>
+<tr valign="top">
+<td>setUrl</td>
+<td>function</td>
+<td>function (url) </td>
+</tr>
+<tr valign="top">
+<td>shortcutsClear</td>
+<td>function</td>
+<td>function () </td>
+</tr>
+<tr valign="top">
+<td>isVersionWarningInitted</td>
+<td>boolean</td>
+<td></td>
+</tr>
+<tr valign="top">
+<td>versionWarning</td>
+<td>function</td>
+<td>function () </td>
+</tr>
+<tr valign="top">
+<td>versionWarningCallback</td>
+<td>function</td>
+<td>function (spjsVersion) </td>
+</tr>
+<tr valign="top">
+<td>options</td>
+<td>object</td>
+<td></td>
+</tr>
+<tr valign="top">
+<td>show</td>
+<td>function</td>
+<td>function (options) </td>
+</tr>
+<tr valign="top">
+<td>hide</td>
+<td>function</td>
+<td>function () </td>
+</tr>
+<tr valign="top">
+<td>forkSetup</td>
+<td>function</td>
+<td>function () </td>
+</tr>
+<tr valign="top">
+<td>devices</td>
+<td>object</td>
+<td></td>
+</tr>
+      </tbody>
+  </table>
+
+<h2>
+<a id="about-chilipeppr" class="anchor" href="#about-chilipeppr" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>About ChiliPeppr</h2>
+
+<p><a href="http://chilipeppr.com">ChiliPeppr</a> is a hardware fiddle, meaning it is a 
+website that lets you easily
+create a workspace to fiddle with your hardware from software. ChiliPeppr provides
+a <a href="https://github.com/johnlauer/serial-port-json-server">Serial Port JSON Server</a> 
+that you run locally on your computer, or remotely on another computer, to connect to 
+the serial port of your hardware like an Arduino or other microcontroller.</p>
+
+<p>You then create a workspace at ChiliPeppr.com that connects to your hardware 
+by starting from scratch or forking somebody else's
+workspace that is close to what you are after. Then you write widgets in
+Javascript that interact with your hardware by forking the base template 
+widget or forking another widget that
+is similar to what you are trying to build.</p>
+
+<p>ChiliPeppr is massively capable such that the workspaces for 
+<a href="http://chilipeppr.com/tinyg">TinyG</a> and <a href="http://chilipeppr.com/grbl">Grbl</a> CNC 
+controllers have become full-fledged CNC machine management software used by
+tens of thousands.</p>
+
+<p>ChiliPeppr has inspired many people in the hardware/software world to use the
+browser and Javascript as the foundation for interacting with hardware. The
+Arduino team in Italy caught wind of ChiliPeppr and now
+ChiliPeppr's Serial Port JSON Server is the basis for the 
+<a href="https://create.arduino.cc/">Arduino's new web IDE</a>. If the Arduino team is excited about building on top
+of ChiliPeppr, what
+will you build on top of it?</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/chilipeppr/widget-programmer">Widget-programmer</a> is maintained by <a href="https://github.com/chilipeppr">chilipeppr</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
