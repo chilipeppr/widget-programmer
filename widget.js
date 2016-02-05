@@ -41,7 +41,7 @@ cpdefine("inline:com-chilipeppr-widget-programmer", ["chilipeppr_ready"], functi
         githuburl: "(auto fill by runme.js)", // The backing github repo
         testurl: "(auto fill by runme.js)",   // The standalone working widget so can view it working by itself
         name: "Widget / Programmer",
-        desc: "This widget lets you program your Arduino/Atmel from within ChiliPeppr using SPJS's new programfromurl method.",
+        desc: "This widget lets you program your Arduino/Atmel from within ChiliPeppr using SPJS's new programfromurl method. SPJS now comes with avrdude and bossac just like the Arduino IDE. This means SPJS can handle programming your firmware directly from the browser.",
         publish: {},
         subscribe: {},
         foreignPublish: {
