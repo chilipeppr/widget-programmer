@@ -129,6 +129,7 @@ cpdefine("inline:com-chilipeppr-widget-programmer", ["chilipeppr_ready"], functi
                 // it's json
                 data = $.parseJSON(msg);
                 //console.log("got json for onWsRecv. data:", data);
+                // more
                 
                 if ('ProgrammerStatus' in data) {
                     
